@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../static/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../static/assets/img/tekfriday.jpg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+     TeKFridayDashboard
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+ <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../static/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../static/assets/demo/demo.css" rel="stylesheet" />
+  <style> 
+
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+  nav li {display:inline-block;}
+     .wrapper1 {
+    text-align: center;
+    margin-top : 8px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+.nav-link:hover{
+    background-color: lightseagreen;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+.fa-clock{
+  display: inline;
+  color:green;
+}
+.button {
+    position: relative;
+    top: 8%;
+}
+      input:checked {
+        height: 5px;
+        width: 5px;
+      }
+
+.expand_caret {
+    transform: scale(1.6);
+    margin-left: 8px;
+    margin-top: -4px;
+}
+a[aria-expanded='false'] > .expand_caret {
+    transform: scale(1.6) rotate(-90deg);
+}
+     </style>
+      
+</head>
+<body class="">
+    <div class="wrapper" >
+      <div class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <li class="nav-title">Nav Title</li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="nav-icon cui-speedometer"></i> Nav item
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="nav-icon cui-speedometer"></i> With badge
+          <span class="badge badge-primary">NEW</span>
+        </a>
+      </li>
+      <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#">
+          <i class="nav-icon cui-puzzle"></i> Nav dropdown
+        </a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="nav-icon cui-puzzle"></i> Nav dropdown item
+            </a>
+          </li>
+        </ul>
+      </li></div></nav>
+    <div class="main-panel">
+           <nav class="navbar navbar-expand-lg navbar-absolute fixed-tops bg-light-yellow" id="navigate" {% block titlenav%  }{%end block%}>
+          &nbsp; &nbsp; <span style="width:75%; font-size: 28px;"><strong>Welcome to Daily Validations</strong></span>
+          <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="navbar-toggler-icon icon-bar"></span>
+              <span class="navbar-toggler-icon icon-bar"></span>
+              <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+             <div class="collapse navbar-collapse justify-content-end">
+              <form class="navbar-form">
+               </form>
+              <ul class="navbar-nav">
+           <li class="nav-item dropdown">
+                 <strong> <i class="fa fa-chart-line" style="color: black;"></i></strong>
+                  </li>
+                   <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <span> <strong>Application</strong>&nbsp;&nbsp;<i class="fa fa-ellipsis-h"></i></span>
+                  <span class="notification">2</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">FINEXT</a>
+                  <a class="dropdown-item" href="#">FLEXSALARY</a>
+                  </div>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                                   <span class="notification">2</span>
+                    <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">dummy text</a>
+                  <a class="dropdown-item" href="#">text to show</a>
+                   </div>
+              </li>
+                  <li class="nav-item dropdown">
+                  <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">person</i>
+                    <p class="d-lg-none d-md-block">
+                      Account
+                    </p>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../Login_v1-20181025T140518Z-001/Login_v1/index.html">Log out</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+ <footer class="footer" style="background-color: lightyellow;  position: fixed; bottom: 0;width:100%;" {% block titlefooter%}{% end block%}>
+          <div class="container-fluid">
+            <nav class="float-left">
+              <ul>
+                <li>
+                  <a href="http://www.tekfriday.com/">
+                    Tekfriday
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.tekfriday.com/">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.tekfriday.com/ContactUs.html">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.tekfriday.com/Company.html">
+                    Licenses
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              &copy;
+              made with <i class="material-icons">favorite</i> by
+              <a href="hhttp://www.tekfriday.com/Company.html" target="_blank">Tekfriday</a> for a better web.
+            </div>
+          </div>
+        </footer>
+      </div>
+<!--   Core JS Files   -->
+  <script src="../static/assets/js/core/jquery.min.js"></script>
+  <script src="../static/assets/js/core/popper.min.js"></script>
+  <script src="../static/assets/js/core/bootstrap-material-design.min.js"></script>
+{% block content %}{% endblock%}    
+</body>
+</html>

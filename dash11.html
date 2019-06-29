@@ -1,0 +1,233 @@
+
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/><link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/material-dashboard.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<style>
+
+.flip {
+  -webkit-perspective: 800;   
+          perspective: 800;
+        position: relative;
+        text-align: center;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+}
+.flip .card {
+    width: 300px;
+    height: 125px;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    background-color: #fff;
+   
+}
+.flip .card .face {
+  -webkit-backface-visibility: hidden ;
+    backface-visibility: hidden ;
+   z-index: 2;
+}
+.flip .card .front {
+   position: absolute;
+   width: 270px;
+   z-index: 1;
+}
+
+.flip .card .back {
+  padding-top: 10%;
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
+  position: absolute;
+}
+
+
+table {
+    width: 100%;
+    margin-top: 0px !important;
+}
+thead{
+     background-color: white;
+}
+th, td {
+    font-style: bold italic;
+    color:black;
+    text-align:center;
+}
+td{
+   border: 1px solid black;
+}
+.s{
+margin: 0;
+    padding: 0;
+}
+.lead{
+                font-weight: bold;
+                font-style:italic;
+            }
+            svg{
+                background-color:  rgb(155, 156, 59);
+                height:auto;
+            }
+            div.google-visualization-tooltip{
+                                            width: auto;
+                                            margin-left: auto;
+                                            background-color:#bab8b8;
+                                            height: auto;
+                                            border-radius: 10px;
+                                            font-size: 20px;
+                                            text-align: center;
+                                            font-family: 'Times New Roman', Times, serif;
+                                            font-style: italic;
+            } 
+tr:nth-child(even){background-color: #f2f2f2}
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+    color: white;
+
+}
+</style>
+
+
+</head>
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+     
+      <div class="logo">
+        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+          Tekfriday
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+    <ul class="nav" style="margin-left:20px;">
+                        <li class="nav-item">
+                              <a {%block title0 %}{% endblock %}>
+                               <a data-toggle="collapse" data-target="#collapseExampleArea" href="#collapseExampleArea" aria-expanded="false">
+                                      <strong style="font-size: 18px;" {% block title1 %}{% endblock %}> DashBoard</strong>
+                                      <div class="expand_caret caret">
+                                      </div>
+                                      </a>
+                                      <div id="collapseExampleArea" class="collapse">
+                                              <strong style="font-size: 18px; color: white; cursor: pointer; margin-left:10px"  >
+                                                  <a href="/">Daily validation </a>
+                                              </strong><br>
+                                              <strong style="font-size: 18px; color: white; cursor: pointer; margin-left:10px"  >
+                                                      <a href="/jobmonitor">Job Monitor </a>
+                                              </strong>
+                                      </div>
+                              </a>
+                        </li>
+                        <li>
+                              <a {% block title2 %}{% endblock %} href="/RunValidations">Run Validations</a>
+                        </li>
+                        <li>
+                              <a {% block title3 %}{% endblock %} href="/DailyTasks">Daily Tasks</a>
+                        </li>
+                      </ul>
+              
+         
+      </div>
+    </div>
+
+
+<div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="navbar-header float-left">
+          {% if title%}
+            <title>{{user.nickname}}</title>
+            {% else %}
+            <title>"Welcome to Daily validation"</title>
+            {% endif %}</div>
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+    
+            <ul class="navbar-nav s">
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <span> <strong>Application</strong>&nbsp;&nbsp;<i class="fa fa-ellipsis-h"></i></span>
+                  <span class="notification">2</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">FINEXT</a>
+                 
+                  </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                   <a class="dropdown-item" href="#">thrid party validation with no errors</a>
+                  <a class="dropdown-item" href="#">more Notification</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">person</i>
+                  <p class="d-lg-none d-md-block">
+                    Account
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Log out</a>
+                </div>
+              </li>
+            </ul>
+</nav>
+          </div>
+        </div>
+
+      <!-- End Navbar -->
+    </div>
+  
+  </div>
+{% block content %}{% endblock %}
+</body></html>
+
